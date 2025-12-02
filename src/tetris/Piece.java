@@ -95,13 +95,16 @@ public class Piece {
      * @return true se o movemento da ficha é posible, se non false
      */
     public boolean moveRight() {
+        // x sera igual al valor mas grande de los 4 squares
         int x = Math.max(Math.max(b.getX(), a.getX()),Math.max(c.getX(), d.getX()));
         boolean canMove = false;
-        if(game.isValidPosition(x+20, 0)){
-            a.setX(a.getX()+20);
-            b.setX(b.getX()+20);
-            c.setX(c.getX()+20);
-            d.setX(d.getX()+20);
+
+        // revisa si la posicion nueva a tomar es valida
+        if(game.isValidPosition(x+game.SQUARE_SIDE, 0)){
+            a.setX(a.getX()+game.SQUARE_SIDE);
+            b.setX(b.getX()+game.SQUARE_SIDE);
+            c.setX(c.getX()+game.SQUARE_SIDE);
+            d.setX(d.getX()+game.SQUARE_SIDE);
             canMove=true;
         }
         return canMove;
@@ -113,14 +116,16 @@ public class Piece {
      * @return true se o movemento da ficha é posible, se non false
      */
     public boolean moveLeft() {
-        //Le establecemos a x el valor mas pequeño que 
+        // x sera igual al valor mas pequeño de los 4 squares
         int x = Math.min(Math.min(b.getX(), a.getX()),Math.min(c.getX(), d.getX()));
         boolean canMove = false;
-        if(game.isValidPosition(x-20, 0)){
-            a.setX(a.getX()-20);
-            b.setX(b.getX()-20);
-            c.setX(c.getX()-20);
-            d.setX(d.getX()-20);
+
+        // revisa si la posicion nueva a tomar es valida
+        if(game.isValidPosition(x-game.SQUARE_SIDE, 0)){
+            a.setX(a.getX()-game.SQUARE_SIDE);
+            b.setX(b.getX()-game.SQUARE_SIDE);
+            c.setX(c.getX()-game.SQUARE_SIDE);
+            d.setX(d.getX()-game.SQUARE_SIDE);
             canMove=true;
         }
         return canMove;
@@ -133,14 +138,16 @@ public class Piece {
      * @return true se o movemento da ficha é posible, se non false
      */
     public boolean moveDown() {
-        //Le establecemos a y el valor mas pequeño que haya en los cuadrados
+        // y sera igual al valor mas grande de los 4 squares
         int y = Math.max(Math.max(b.getY(), a.getY()),Math.max(c.getY(), d.getY()));
         boolean canMove = false;
-        if(game.isValidPosition(0, y + 20)){
-            a.setY(a.getY()+20);
-            b.setY(b.getY()+20);
-            c.setY(c.getY()+20);
-            d.setY(d.getY()+20);
+
+        // revisa si la posicion nueva a tomar es valida
+        if(game.isValidPosition(0, y + game.SQUARE_SIDE)){
+            a.setY(a.getY()+game.SQUARE_SIDE);
+            b.setY(b.getY()+game.SQUARE_SIDE);
+            c.setY(c.getY()+game.SQUARE_SIDE);
+            d.setY(d.getY()+game.SQUARE_SIDE);
             canMove=true;
         }
         return canMove;
