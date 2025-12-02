@@ -84,7 +84,10 @@ public class Piece {
     public Square getD() {
         return d;
     }
-
+    /**
+     * Metodo set para establecer valores a d
+     * @param d
+     */
     public void setD(Square d) {
         this.d = d;
     }
