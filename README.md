@@ -1,2 +1,2 @@
 # Tetris
-Projecto del tetri
+Projecto del tetris
